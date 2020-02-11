@@ -9,9 +9,27 @@ The purpose of the project is to present a structure with basic functionalities 
 * Selenium Grid
 * Parallel Execution
 
-## Language and Frameworks
+## Language and frameworks
 
 * Java 11
 * Selenium WebDriver
 * TestNG
 * Lombok
+
+## Command line execution
+
+Using the build plugin **maven-surefire-plugin** and configuring it with the _suiteXmlFiles_ tag:
+
+```xml
+<configuration>
+   <suiteXmlFiles>
+      <suiteXmlFile>src/test/resources/suites/${suite}.xml</suiteXmlFile>
+   </suiteXmlFiles>
+</configuration>
+```
+
+* Use **-Dsuite=XmlSuiteName** to call the suite
+
+````bash
+mvn clean test -Dsuite=XmlSuiteName
+````
