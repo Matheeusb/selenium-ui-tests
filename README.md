@@ -31,5 +31,5 @@ Using the build plugin **maven-surefire-plugin** and configuring it with the _su
 * Use **-Dsuite=XmlSuiteName** to call the suite
 
 ````bash
-mvn clean test -Dsuite=XmlSuiteName
+mvn clean test -Dsuite=smoke
 ````

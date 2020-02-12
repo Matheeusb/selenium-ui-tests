@@ -11,8 +11,7 @@ public class ProjectsTest extends BaseTest {
 
     @Test
     public void validateAccessDocumentationWebDriver() {
-        HomePage home = new HomePage(driver);
-        home.accessMenuProjects()
+        new HomePage(driver).accessMenuProjects()
                 .learnMoreWebDriver();
 
         DocumentationPage documentarion = new DocumentationPage(driver);
