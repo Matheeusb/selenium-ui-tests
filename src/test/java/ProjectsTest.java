@@ -11,10 +11,9 @@ public class ProjectsTest extends BaseTest {
 
     @Test
     public void validateAccessDocumentationWebDriver() {
-        new HomePage(driver).accessMenuProjects()
+        DocumentationPage documentarion = new HomePage(driver)
+                .accessMenuProjects()
                 .learnMoreWebDriver();
-
-        DocumentationPage documentarion = new DocumentationPage(driver);
 
         assertEquals(documentarion.getTitleLabel().getText(), "WebDriver");
     }

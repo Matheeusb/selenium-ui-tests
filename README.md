@@ -13,6 +13,7 @@ The purpose of the project is to present a structure with basic functionalities 
 
 * Java 11
 * Selenium WebDriver
+* WebDriver Manager
 * TestNG
 * Lombok
 
