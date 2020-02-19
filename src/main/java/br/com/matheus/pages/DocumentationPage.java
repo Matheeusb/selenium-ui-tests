@@ -21,8 +21,8 @@ public class DocumentationPage extends BasePage {
     @FindBy(xpath = "//div[@id='body-inner']/p[1]")
     private WebElement firstParagraphLabel;
 
-    public DocumentationPage(WebDriver driver) {
-        super(driver);
+    public DocumentationPage() {
+        super();
     }
 
     public DocumentationPage searchDocumentation(String menuItem) {
