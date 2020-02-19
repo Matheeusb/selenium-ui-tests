@@ -1,17 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Browsers Tests" verbose="1" parallel="tests" thread-count="3">
+<suite name="Browsers Tests" verbose="1" parallel="tests" thread-count="99">
 
     <test name="Chrome Execution">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="ProjectsTest" />
+            <class name="br.com.matheus.tests.ProjectsTest" />
         </classes>
     </test>
 
     <test name="Firefox Execution">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="ProjectsTest" />
+            <class name="br.com.matheus.tests.ProjectsTest" />
         </classes>
     </test>
 

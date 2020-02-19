@@ -1,3 +1,5 @@
+package br.com.matheus.tests;
+
 import br.com.matheus.common.BaseTest;
 import br.com.matheus.pages.DocumentationPage;
 import br.com.matheus.pages.HomePage;
