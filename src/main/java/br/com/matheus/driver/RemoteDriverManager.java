@@ -4,7 +4,6 @@ package br.com.matheus.driver;
 import io.github.bonigarcia.wdm.DriverManagerType;
 import lombok.extern.java.Log;
 import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -19,7 +18,7 @@ import java.net.URL;
 public class RemoteDriverManager implements IDriver {
 
     @Override
-    public RemoteWebDriver createSession(String browser) {
+    public RemoteWebDriver createDriver(String browser) {
         RemoteWebDriver remoteWebDriver = null;
         try {
             remoteWebDriver = new RemoteWebDriver(new URL("http://localhost:4444/"), getCapability(browser));

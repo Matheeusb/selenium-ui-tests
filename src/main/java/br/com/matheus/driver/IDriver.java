@@ -4,5 +4,5 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public interface IDriver {
 
-    RemoteWebDriver createSession(String browser);
+    RemoteWebDriver createDriver(String browser);
 }

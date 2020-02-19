@@ -7,21 +7,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
-import java.net.MalformedURLException;
-
 @Log
 @Listeners(ExtentITestListenerClassAdapter.class)
 public class BaseTest {
 
-    protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+    protected static final ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+
     public WebDriver getDriver() {
         return driver.get();
     }
 
     @BeforeMethod
     @Parameters({"browser", "execution"})
-    public void setUp(@Optional("chrome") String browser, @Optional("local") String execution) throws MalformedURLException {
-        driver.set(DriverFactory.createInstance(browser, execution));
+    public void setUp(@Optional("iexplorer") String browser, @Optional("local") String execution) {
+        driver.set(DriverFactory.createSession(browser, execution));
+        getDriver().get("https://www.selenium.dev/");
+        getDriver().manage().window().maximize();
     }
 
     @AfterMethod
