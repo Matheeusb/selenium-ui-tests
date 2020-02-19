@@ -1,23 +1,20 @@
 package br.com.matheus.driver;
 
-import org.aeonbits.owner.ConfigCache;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverFactory {
 
-
-    public static WebDriver createInstance(String browser) {
-        Configuration configuration = ConfigCache.getOrCreate(Configuration.class);
-        Target target = Target.valueOf(configuration.target().toUpperCase());
-        WebDriver webdriver;
+    public static RemoteWebDriver createInstance(String browser, String execution) {
+        Target target = Target.valueOf(execution.toUpperCase());
+        RemoteWebDriver webdriver;
 
         switch (target) {
-
             case LOCAL:
-                webdriver = new LocalDriverManager().createInstance(browser);
+                webdriver = new LocalDriverManager().createSession(browser);
                 break;
-            case GRID:
-                webdriver = new RemoteDriverManager().createInstance(browser);
+            case REMOTE:
+                webdriver = new RemoteDriverManager().createSession(browser);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + target);
@@ -27,6 +24,6 @@ public class DriverFactory {
     }
 
     enum Target {
-        LOCAL, GRID
+        LOCAL, REMOTE
     }
 }

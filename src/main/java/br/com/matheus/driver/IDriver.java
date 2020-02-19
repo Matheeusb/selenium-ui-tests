@@ -1,8 +1,8 @@
 package br.com.matheus.driver;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public interface IDriver {
 
-    WebDriver createInstance(String browser);
+    RemoteWebDriver createSession(String browser);
 }
