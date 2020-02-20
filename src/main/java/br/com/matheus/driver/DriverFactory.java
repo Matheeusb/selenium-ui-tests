@@ -1,11 +1,16 @@
 package br.com.matheus.driver;
 
+import lombok.experimental.UtilityClass;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+@UtilityClass
 public class DriverFactory {
 
+    private final String LOCAL = "local";
+    private final String REMOTE = "remote";
+
     public static RemoteWebDriver createSession(String browser, String execution) {
-        Target target = Target.valueOf(execution.toUpperCase());
+        String target = execution.toLowerCase();
         RemoteWebDriver webdriver;
 
         switch (target) {
@@ -20,9 +25,5 @@ public class DriverFactory {
         }
 
         return webdriver;
-    }
-
-    enum Target {
-        LOCAL, REMOTE
     }
 }

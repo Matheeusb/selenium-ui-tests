@@ -17,6 +17,6 @@ public class ProjectsTest extends BaseTest {
                 .accessMenuProjects()
                 .learnMoreWebDriver();
 
-        assertEquals(documentarion.getTitleLabel().getText(), "WebDriver");
+        assertEquals(documentarion.getTitleGridLabel().getText(), "WebDriver");
     }
 }

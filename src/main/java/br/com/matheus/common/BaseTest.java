@@ -19,7 +19,7 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters({"browser", "execution"})
-    public void setUp(@Optional("iexplorer") String browser, @Optional("local") String execution) {
+    public void setUp(@Optional("chrome") String browser, @Optional("local") String execution) {
         driver.set(DriverFactory.createSession(browser, execution));
         getDriver().get("https://www.selenium.dev/");
         getDriver().manage().window().maximize();

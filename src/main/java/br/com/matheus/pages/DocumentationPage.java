@@ -9,16 +9,16 @@ import org.openqa.selenium.support.FindBy;
 public class DocumentationPage extends BasePage {
 
     @FindBy(id = "webdriver")
-    private WebElement titleLabel;
+    private WebElement titleWebDriverLabel;
+
+    @FindBy(id = "grid")
+    private WebElement titleGridLabel;
 
     @FindBy(id = "search-by")
     private WebElement searchInput;
 
     @FindBy(xpath = "//a[@href='https://selenium.dev/documentation/en/grid/']")
     private WebElement gridSideMenuItem;
-
-    @FindBy(xpath = "//div[@id='body-inner']/p[1]")
-    private WebElement firstParagraphLabel;
 
     public DocumentationPage() {
         super();
