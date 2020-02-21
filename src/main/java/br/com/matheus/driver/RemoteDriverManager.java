@@ -38,7 +38,7 @@ public class RemoteDriverManager implements IDriver {
             case OPERA -> capabilities = new OperaOptions();
             case EDGE -> capabilities = new EdgeOptions();
             case IEXPLORER -> capabilities = new InternetExplorerOptions();
-            default -> throw new IllegalStateException();
+            default -> throw new IllegalStateException(browser + "is not presente on the Grid!");
         }
 
         return capabilities;

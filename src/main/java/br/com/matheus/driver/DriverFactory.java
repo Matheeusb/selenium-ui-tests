@@ -10,15 +10,15 @@ public class DriverFactory {
     private final String REMOTE = "remote";
 
     public static RemoteWebDriver createSession(String browser, String execution) {
-        String target = execution.toLowerCase();
-        RemoteWebDriver webdriver;
+        String executionTarget = execution.toLowerCase();
+        RemoteWebDriver driver;
 
-        switch (target) {
-            case LOCAL -> webdriver = new LocalDriverManager().createDriver(browser);
-            case REMOTE -> webdriver = new RemoteDriverManager().createDriver(browser);
-            default -> throw new IllegalStateException("Unexpected value: " + target);
+        switch (executionTarget) {
+            case LOCAL -> driver = new LocalDriverManager().createDriver(browser);
+            case REMOTE -> driver = new RemoteDriverManager().createDriver(browser);
+            default -> throw new IllegalStateException("Unexpected value: " + executionTarget);
         }
 
-        return webdriver;
+        return driver;
     }
 }
