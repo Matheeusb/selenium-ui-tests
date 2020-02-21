@@ -1,6 +1,5 @@
 package br.com.matheus.driver;
 
-
 import io.github.bonigarcia.wdm.DriverManagerType;
 import lombok.extern.java.Log;
 import org.openqa.selenium.MutableCapabilities;
@@ -34,23 +33,12 @@ public class RemoteDriverManager implements IDriver {
         DriverManagerType driverManagerType = DriverManagerType.valueOf(browser.toUpperCase());
 
         switch (driverManagerType) {
-            case CHROME:
-                capabilities = new ChromeOptions();
-                break;
-            case FIREFOX:
-                capabilities = new FirefoxOptions();
-                break;
-            case OPERA:
-                capabilities = new OperaOptions();
-                break;
-            case EDGE:
-                capabilities = new EdgeOptions();
-                break;
-            case IEXPLORER:
-                capabilities = new InternetExplorerOptions();
-                break;
-            default:
-                throw new IllegalStateException();
+            case CHROME -> capabilities = new ChromeOptions();
+            case FIREFOX -> capabilities = new FirefoxOptions();
+            case OPERA -> capabilities = new OperaOptions();
+            case EDGE -> capabilities = new EdgeOptions();
+            case IEXPLORER -> capabilities = new InternetExplorerOptions();
+            default -> throw new IllegalStateException();
         }
 
         return capabilities;

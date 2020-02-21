@@ -14,14 +14,9 @@ public class DriverFactory {
         RemoteWebDriver webdriver;
 
         switch (target) {
-            case LOCAL:
-                webdriver = new LocalDriverManager().createDriver(browser);
-                break;
-            case REMOTE:
-                webdriver = new RemoteDriverManager().createDriver(browser);
-                break;
-            default:
-                throw new IllegalStateException();
+            case LOCAL -> webdriver = new LocalDriverManager().createDriver(browser);
+            case REMOTE -> webdriver = new RemoteDriverManager().createDriver(browser);
+            default -> throw new IllegalStateException("Unexpected value: " + target);
         }
 
         return webdriver;
