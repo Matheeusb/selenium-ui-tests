@@ -16,7 +16,7 @@ public class DriverFactory {
         switch (executionTarget) {
             case LOCAL -> driver = new LocalDriverManager().createDriver(browser);
             case REMOTE -> driver = new RemoteDriverManager().createDriver(browser);
-            default -> throw new IllegalStateException("Unexpected value: " + executionTarget);
+            default -> throw new IllegalStateException(String.format("unknown %s execution target", executionTarget.toUpperCase()));
         }
 
         return driver;

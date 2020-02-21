@@ -17,7 +17,7 @@ public class LocalDriverManager implements IDriver {
             WebDriverManager.getInstance(driverType).setup();
             driver = (RemoteWebDriver) driverClass.getConstructor().newInstance();
         } catch (Exception e) {
-            log.warning(browser + " is not installed");
+            log.warning(String.format("%s is not installed", browser.toUpperCase()));
         }
         return driver;
     }

@@ -38,7 +38,7 @@ public class RemoteDriverManager implements IDriver {
             case OPERA -> capabilities = new OperaOptions();
             case EDGE -> capabilities = new EdgeOptions();
             case IEXPLORER -> capabilities = new InternetExplorerOptions();
-            default -> throw new IllegalStateException(browser + "is not presente on the Grid!");
+            default -> throw new IllegalStateException(String.format("%s has no capabilities implemented!", browser.toUpperCase()));
         }
 
         return capabilities;
