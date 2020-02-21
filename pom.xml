@@ -78,7 +78,9 @@
                     <version>${maven.compiler.version}</version>
                     <configuration>
                         <release>${maven.compiler.release}</release>
+                        <source>${maven.compiler.source}</source>
                         <target>${maven.target.release}</target>
+                        <compilerArgs>--enable-preview</compilerArgs>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -86,6 +88,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven.surefire.version}</version>
                     <configuration>
+                        <argLine>--enable-preview</argLine>
                         <suiteXmlFiles>
                             <!--suppress UnresolvedMavenProperty -->
                             <suiteXmlFile>src/test/resources/suites/${suite}.xml</suiteXmlFile>
@@ -94,16 +97,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>13</source>
-                    <target>13</target>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
 </project>

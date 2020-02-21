@@ -11,7 +11,7 @@ The purpose of the project is to present a structure with basic functionalities 
 
 ## Language and frameworks
 
-* Java 11
+* Java 13
 * Selenium WebDriver
 * WebDriver Manager
 * TestNG
