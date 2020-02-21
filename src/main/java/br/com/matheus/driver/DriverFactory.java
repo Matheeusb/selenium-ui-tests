@@ -6,8 +6,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 @UtilityClass
 public class DriverFactory {
 
-    private final String LOCAL = "local";
-    private final String REMOTE = "remote";
+    private static final String LOCAL = "local";
+    private static final String REMOTE = "remote";
 
     public static RemoteWebDriver createSession(String browser, String execution) {
         String executionTarget = execution.toLowerCase();
