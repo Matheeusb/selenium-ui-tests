@@ -4,7 +4,7 @@ The purpose of the project is to present a structure with basic functionalities 
 
 * Page Object Pattern
 * Chain of Responsibility Pattern
-* Driver Manager
+* Factory Pattern
 * Extent Report
 * Selenium Grid
 * Parallel Execution
@@ -34,3 +34,5 @@ Using the build plugin **maven-surefire-plugin** and configuring it with the _su
 ````bash
 mvn clean test -Dsuite=smoke
 ````
+
+* Contribute... ! :beers:
