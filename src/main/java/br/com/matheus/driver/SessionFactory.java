@@ -4,7 +4,7 @@ import lombok.experimental.UtilityClass;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 @UtilityClass
-public class DriverFactory {
+public class SessionFactory {
 
     private static final String LOCAL = "local";
     private static final String REMOTE = "remote";
@@ -14,8 +14,8 @@ public class DriverFactory {
         RemoteWebDriver driver;
 
         switch (executionTarget) {
-            case LOCAL -> driver = new LocalDriverManager().createDriver(browser);
-            case REMOTE -> driver = new RemoteDriverManager().createDriver(browser);
+            case LOCAL -> driver = new LocalDriverFactory().createDriver(browser);
+            case REMOTE -> driver = new RemoteDriverFactory().createDriver(browser);
             default -> throw new IllegalStateException(String.format("unknown %s execution target", executionTarget.toUpperCase()));
         }
 
