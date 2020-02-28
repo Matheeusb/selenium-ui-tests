@@ -35,4 +35,6 @@ Using the build plugin **maven-surefire-plugin** and configuring it with the _su
 mvn clean test -Dsuite=smoke
 ````
 
-* Contribute... ! :beers:
+## Contribute! :beers:
+
+...
