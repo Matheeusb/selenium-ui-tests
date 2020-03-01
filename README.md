@@ -3,9 +3,9 @@
 The purpose of the project is to present a structure with basic functionalities for automated tests:
 
 * Page Object Pattern
-* Chain of Responsibility Pattern
 * Abstract Factory Pattern
-* Extent Report
+* Method Chaining
+* Extent Report 4
 * Selenium Grid
 * Parallel Execution with ThreadLocal
 
