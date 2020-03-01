@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Browsers Tests" verbose="1" parallel="tests" thread-count="99">
+<suite name="Execution Local" verbose="1" parallel="tests" thread-count="50">
 
-    <test name="Chrome Execution">
+    <test name="Chrome Execution" parallel="classes" thread-count="5">
         <parameter name="browser" value="chrome"/>
         <parameter name="execution" value="local"/>
         <classes>
@@ -10,7 +10,7 @@
         </classes>
     </test>
 
-    <test name="Firefox Execution">
+    <test name="Firefox Execution" parallel="classes" thread-count="5">
         <parameter name="browser" value="firefox"/>
         <parameter name="execution" value="local"/>
         <classes>
@@ -19,7 +19,7 @@
         </classes>
     </test>
 
-    <test name="Edge Execution">
+    <test name="Edge Execution" parallel="classes" thread-count="5">
         <parameter name="browser" value="edge"/>
         <parameter name="execution" value="local"/>
         <classes>
