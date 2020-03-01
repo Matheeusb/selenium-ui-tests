@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 @Listeners(ExtentITestListenerClassAdapter.class)
 public class BaseTest {
 
-    protected static final ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+    protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 
     public WebDriver getDriver() {
         return driver.get();

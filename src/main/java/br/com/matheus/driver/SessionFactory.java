@@ -14,8 +14,8 @@ public class SessionFactory {
         RemoteWebDriver driver;
 
         switch (executionTarget) {
-            case LOCAL -> driver = new LocalDriverFactory().createDriver(browser);
-            case REMOTE -> driver = new RemoteDriverFactory().createDriver(browser);
+            case LOCAL -> driver = new LocalDriverManager().createDriver(browser);
+            case REMOTE -> driver = new RemoteDriverManager().createDriver(browser);
             default -> throw new IllegalStateException(String.format("unknown %s execution target", executionTarget.toUpperCase()));
         }
 

@@ -7,7 +7,7 @@ The purpose of the project is to present a structure with basic functionalities 
 * Factory Pattern
 * Extent Report
 * Selenium Grid
-* Parallel Execution
+* Parallel Execution with ThreadLocal
 
 ## Language and frameworks
 
