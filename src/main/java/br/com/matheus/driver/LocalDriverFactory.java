@@ -6,7 +6,7 @@ import lombok.extern.java.Log;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 @Log
-public class LocalDriverManager implements IDriver {
+public class LocalDriverFactory extends DriverFactory {
 
     @Override
     public RemoteWebDriver createDriver(String browser) {

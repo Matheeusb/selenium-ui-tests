@@ -4,7 +4,7 @@ The purpose of the project is to present a structure with basic functionalities 
 
 * Page Object Pattern
 * Chain of Responsibility Pattern
-* Factory Pattern
+* Abstract Factory Pattern
 * Extent Report
 * Selenium Grid
 * Parallel Execution with ThreadLocal
