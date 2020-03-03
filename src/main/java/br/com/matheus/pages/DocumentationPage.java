@@ -1,6 +1,7 @@
 package br.com.matheus.pages;
 
 import br.com.matheus.common.BasePage;
+import br.com.matheus.common.CommonActions;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,6 +31,7 @@ public class DocumentationPage extends BasePage {
     }
 
     public DocumentationPage accessGridDocumentation() {
+        CommonActions.fluentWait(driver, gridSideMenuItem);
         gridSideMenuItem.click();
         return this;
     }
