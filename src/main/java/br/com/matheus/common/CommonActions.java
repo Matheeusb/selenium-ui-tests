@@ -1,27 +1,21 @@
 package br.com.matheus.common;
 
 import lombok.experimental.UtilityClass;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
-import java.util.function.Function;
 
 @UtilityClass
 public class CommonActions {
 
-    public static void fluentWait(WebDriver driver, WebElement element) {
-        new FluentWait<>(driver)
+    public static Wait<WebDriver> fluentWait(WebDriver driver) {
+        return new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(3))
-                .ignoring(Exception.class)
-                .until(new Function<WebDriver, WebElement>() {
-            @Override
-            public WebElement apply(WebDriver driver) {
-                return element;
-            }
-        });
+                .ignoring(NoSuchElementException.class);
     }
 }
 
