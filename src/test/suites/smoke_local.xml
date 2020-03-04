@@ -5,7 +5,7 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="execution" value="local"/>
         <classes>
-            <class name="br.com.matheus.tests.AboutGridTest" />
+            <class name="br.com.matheus.tests.DocumentationTest" />
             <class name="br.com.matheus.tests.ProjectsTest" />
         </classes>
     </test>
@@ -14,7 +14,7 @@
         <parameter name="browser" value="firefox"/>
         <parameter name="execution" value="local"/>
         <classes>
-            <class name="br.com.matheus.tests.AboutGridTest" />
+            <class name="br.com.matheus.tests.DocumentationTest" />
             <class name="br.com.matheus.tests.ProjectsTest" />
         </classes>
     </test>
@@ -23,7 +23,7 @@
         <parameter name="browser" value="edge"/>
         <parameter name="execution" value="local"/>
         <classes>
-            <class name="br.com.matheus.tests.AboutGridTest" />
+            <class name="br.com.matheus.tests.DocumentationTest" />
             <class name="br.com.matheus.tests.ProjectsTest" />
         </classes>
     </test>

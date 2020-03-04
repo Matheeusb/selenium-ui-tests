@@ -9,7 +9,7 @@ public class DocumentationDataProvider {
     @DataProvider(name = "documentation")
     public static Object[][] getDocumentationItems() {
         return new Object[][] {
-                {"Grid"}
+                {"Grid"}, {"WebDriver"}, {"Remote WebDriver"}
         };
     }
 }

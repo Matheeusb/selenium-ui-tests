@@ -1,8 +1,8 @@
 package br.com.matheus.pages;
 
 import br.com.matheus.common.BasePage;
-import br.com.matheus.common.CommonActions;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,11 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 @Getter
 public class DocumentationPage extends BasePage {
 
-    @FindBy(id = "webdriver")
-    private WebElement titleWebDriverLabel;
-
-    @FindBy(id = "grid")
-    private WebElement titleGridLabel;
+    @FindBy(css = "div#body-inner > h1")
+    private WebElement titleLabel;
 
     @FindBy(id = "search-by")
     private WebElement searchInput;
@@ -27,12 +24,12 @@ public class DocumentationPage extends BasePage {
     }
 
     public DocumentationPage searchDocumentation(String menuItem) {
-        searchInput.sendKeys(menuItem);
+        fluentWait.until(ExpectedConditions.visibilityOf(searchInput)).sendKeys(menuItem);
         return this;
     }
 
-    public DocumentationPage accessGridDocumentation() {
-        fluentWait.until(ExpectedConditions.visibilityOf(gridSideMenuItem)).click();
+    public DocumentationPage accessDocumentationItem(String item) {
+        driver.findElement(By.xpath(String.format("//li[@title='%s']", item))).click();
         return this;
     }
 }

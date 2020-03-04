@@ -8,15 +8,15 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class AboutGridTest extends BaseTest {
+public class DocumentationTest extends BaseTest {
 
     @Test(dataProvider = "documentation", dataProviderClass = DocumentationDataProvider.class)
     public void validateDocumentationAboutGrid(String searchInput) {
         DocumentationPage documentation = new HomePage()
                 .accessMenuDocumentation()
                 .searchDocumentation(searchInput)
-                .accessGridDocumentation();
+                .accessDocumentationItem(searchInput);
 
-        assertEquals(documentation.getTitleGridLabel().getText(), searchInput);
+        assertEquals(documentation.getTitleLabel().getText(), searchInput);
     }
 }
