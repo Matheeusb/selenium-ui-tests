@@ -11,7 +11,7 @@ import static org.testng.Assert.*;
 public class DocumentationTest extends BaseTest {
 
     @Test(dataProvider = "documentation", dataProviderClass = DocumentationDataProvider.class)
-    public void validateDocumentationAboutGrid(String searchInput) {
+    public void validateDocumentationPage(String searchInput) {
         DocumentationPage documentation = new HomePage()
                 .accessMenuDocumentation()
                 .searchDocumentation(searchInput)

@@ -1,8 +1,8 @@
 package br.com.matheus.driver;
 
 import io.github.bonigarcia.wdm.DriverManagerType;
-import lombok.extern.java.Log;
 import org.openqa.selenium.MutableCapabilities;
+import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -13,19 +13,15 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-@Log
-public class RemoteDriverFactory extends DriverFactory {
+public class RemoteDriverFactory implements IDriver {
 
     @Override
     public RemoteWebDriver createDriver(String browser) {
-        RemoteWebDriver remoteWebDriver = null;
         try {
-            remoteWebDriver = new RemoteWebDriver(new URL("http://localhost:4444/"), getCapability(browser));
-        } catch (MalformedURLException | IllegalArgumentException e) {
-            log.warning(e.getMessage());
+            return new RemoteWebDriver(new URL("http://localhost:4444/"), getCapability(browser));
+        } catch (MalformedURLException e) {
+            throw new SessionNotCreatedException("Incorrect selenium grid URL!", e);
         }
-
-        return remoteWebDriver;
     }
 
     private MutableCapabilities getCapability(String browser) {
