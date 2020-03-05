@@ -3,6 +3,7 @@ package br.com.matheus.pages;
 import br.com.matheus.common.BasePage;
 import lombok.Getter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,8 +17,8 @@ public class DocumentationPage extends BasePage {
     @FindBy(id = "search-by")
     private WebElement searchInput;
 
-    @FindBy(xpath = "//a[@href='https://selenium.dev/documentation/en/grid/']")
-    private WebElement gridSideMenuItem;
+    @FindBy(xpath = "//a[@title='Edit this page']")
+    private WebElement editThisPageLink;
 
     public DocumentationPage() {
         super();
@@ -30,6 +31,12 @@ public class DocumentationPage extends BasePage {
 
     public DocumentationPage accessDocumentationItem(String item) {
         driver.findElement(By.xpath(String.format("//li[@title='%s']", item))).click();
+        return this;
+    }
+
+    public DocumentationPage accessGithubSeleniumHQ() {
+        editThisPageLink.click();
+        driver.switchTo().window()
         return this;
     }
 }
