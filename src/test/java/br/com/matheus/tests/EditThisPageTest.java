@@ -14,6 +14,6 @@ public class EditThisPageTest extends BaseTest {
                 .accessDocumentationItem("Grid")
                 .accessGithubSeleniumHQ();
 
-        assertEquals("teste", getDriver().getCurrentUrl());
+        assertEquals("https://github.com/SeleniumHQ/seleniumhq.github.io/edit/master/docs_source_files/content/grid/_index.en.md", getDriver().getCurrentUrl());
     }
 }

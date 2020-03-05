@@ -3,10 +3,12 @@ package br.com.matheus.pages;
 import br.com.matheus.common.BasePage;
 import lombok.Getter;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 public class DocumentationPage extends BasePage {
@@ -36,7 +38,10 @@ public class DocumentationPage extends BasePage {
 
     public DocumentationPage accessGithubSeleniumHQ() {
         editThisPageLink.click();
-        driver.switchTo().window()
+        System.out.println(driver.getWindowHandles());
+        List tabs = new ArrayList();
+        tabs.addAll(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1).toString());
         return this;
     }
 }
