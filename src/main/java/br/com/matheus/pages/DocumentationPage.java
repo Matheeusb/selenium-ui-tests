@@ -38,10 +38,8 @@ public class DocumentationPage extends BasePage {
 
     public DocumentationPage accessGithubSeleniumHQ() {
         editThisPageLink.click();
-        System.out.println(driver.getWindowHandles());
-        List tabs = new ArrayList();
-        tabs.addAll(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(1).toString());
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
         return this;
     }
 }
