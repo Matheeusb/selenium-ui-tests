@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
-@Log
 @Listeners(ExtentITestListenerClassAdapter.class)
 public class BaseTest {
 
