@@ -5,15 +5,14 @@ The purpose of the project is to present a structure with basic functionalities 
 * Page Object Pattern
 * Abstract Factory Pattern
 * Method Chaining
-* Extent Report 4
+* Extent Report 5
 * Selenium Grid
 * Parallel Execution with ThreadLocal
 
 ## Language and frameworks
 
-* Java 13
+* Java 17
 * Selenium WebDriver
-* WebDriver Manager
 * TestNG
 * Lombok
 
