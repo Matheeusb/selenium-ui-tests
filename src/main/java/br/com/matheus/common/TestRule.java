@@ -2,7 +2,6 @@ package br.com.matheus.common;
 
 import br.com.matheus.driver.SessionManager;
 import com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter;
-import lombok.extern.java.Log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
