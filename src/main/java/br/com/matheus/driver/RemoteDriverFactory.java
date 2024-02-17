@@ -1,13 +1,12 @@
 package br.com.matheus.driver;
 
-import io.github.bonigarcia.wdm.DriverManagerType;
+import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -31,7 +30,6 @@ public class RemoteDriverFactory implements IDriver {
         switch (driverManagerType) {
             case CHROME -> capabilities = new ChromeOptions();
             case FIREFOX -> capabilities = new FirefoxOptions();
-            case OPERA -> capabilities = new OperaOptions();
             case EDGE -> capabilities = new EdgeOptions();
             case IEXPLORER -> capabilities = new InternetExplorerOptions();
             default -> throw new IllegalStateException(String.format("%s has no capabilities implemented!", browser.toUpperCase()));

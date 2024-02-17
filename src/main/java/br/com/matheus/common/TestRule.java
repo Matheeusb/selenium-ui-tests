@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
 @Listeners(ExtentITestListenerClassAdapter.class)
-public class BaseTest {
+public class TestRule {
 
     protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 
