@@ -6,19 +6,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
 
-    @FindBy(xpath = "//nav[@id='navbar']/a[@href='/projects']")
+    @FindBy(xpath = "//a[@href='/projects']")
     private WebElement projectsMenuItem;
 
-    @FindBy(xpath = "//nav[@id='navbar']/a[@href='/documentation']")
+    @FindBy(xpath = "//a[@href='/documentation']")
     private WebElement documentationMenuItem;
 
     public HomePage() {
         super();
-    }
-
-    public ProjectsPage accessMenuProjects() {
-        projectsMenuItem.click();
-        return new ProjectsPage();
     }
 
     public DocumentationPage accessMenuDocumentation() {

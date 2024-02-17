@@ -10,33 +10,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 @Getter
 public class DocumentationPage extends BasePage {
 
-    @FindBy(css = "div#body-inner > h1")
+    @FindBy(xpath = "//h1")
     private WebElement titleLabel;
-
-    @FindBy(id = "search-by")
-    private WebElement searchInput;
-
-    @FindBy(xpath = "//a[@title='Edit this page']")
-    private WebElement editThisPageLink;
 
     public DocumentationPage() {
         super();
     }
 
-    public DocumentationPage searchDocumentation(String menuItem) {
-        fluentWait.until(ExpectedConditions.visibilityOf(searchInput)).sendKeys(menuItem);
-        return this;
-    }
-
     public DocumentationPage accessDocumentationItem(String item) {
-        driver.findElement(By.xpath(String.format("//li[@title='%s']", item))).click();
-        return this;
-    }
-
-    public DocumentationPage accessGithubSeleniumHQ() {
-        editThisPageLink.click();
-        tabs.addAll(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(1));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(
+                By.xpath(String.format("//a[@href='/documentation/%s/']", item.toLowerCase().replace(" ", "_")))))).click();
         return this;
     }
 }

@@ -18,7 +18,7 @@ public class BasePage {
     protected List<String> tabs;
 
     public BasePage() {
-        this.driver = new BaseTest().getDriver();
+        this.driver = new TestRule().getDriver();
         this.fluentWait = CommonActions.fluentWait(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         this.tabs = new ArrayList<>();
