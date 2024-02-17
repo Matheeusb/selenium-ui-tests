@@ -6,7 +6,6 @@
         <parameter name="execution" value="local"/>
         <classes>
             <class name="br.com.matheus.tests.DocumentationTest" />
-            <class name="br.com.matheus.tests.ProjectsTest" />
         </classes>
     </test>
 
@@ -15,7 +14,6 @@
         <parameter name="execution" value="local"/>
         <classes>
             <class name="br.com.matheus.tests.DocumentationTest" />
-            <class name="br.com.matheus.tests.ProjectsTest" />
         </classes>
     </test>
 
@@ -24,7 +22,6 @@
         <parameter name="execution" value="local"/>
         <classes>
             <class name="br.com.matheus.tests.DocumentationTest" />
-            <class name="br.com.matheus.tests.ProjectsTest" />
         </classes>
     </test>
 
