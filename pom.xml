@@ -16,11 +16,11 @@
         <maven.compiler.target>17</maven.compiler.target>
         <maven.target.release>17</maven.target.release>
         <maven.surefire.version>3.2.5</maven.surefire.version>
-        <selenium.java.version>4.17.0</selenium.java.version>
-        <webdrivermanager.version>5.6.3</webdrivermanager.version>
-        <testng.version>7.9.0</testng.version>
-        <lombok.version>1.18.30</lombok.version>
-        <extentreports.version>5.1.1</extentreports.version>
+        <selenium.java.version>4.23.0</selenium.java.version>
+        <webdrivermanager.version>5.9.2</webdrivermanager.version>
+        <testng.version>7.10.2</testng.version>
+        <lombok.version>1.18.34</lombok.version>
+        <extentreports.version>5.1.2</extentreports.version>
         <extentreports.testng.adapter.version>1.2.2</extentreports.testng.adapter.version>
     </properties>
 
@@ -38,6 +38,7 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
