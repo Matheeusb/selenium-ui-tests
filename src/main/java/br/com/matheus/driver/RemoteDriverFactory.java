@@ -1,6 +1,5 @@
 package br.com.matheus.driver;
 
-import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,33 +7,38 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariOptions;
 
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class RemoteDriverFactory implements IDriver {
 
     @Override
     public RemoteWebDriver createDriver(String browser) {
         try {
-            return new RemoteWebDriver(new URL("http://localhost:4444/"), getCapability(browser));
-        } catch (MalformedURLException e) {
+            return new RemoteWebDriver(new URI("http://localhost:4444/").toURL(), getCapability(browser));
+        } catch (MalformedURLException | URISyntaxException e) {
             throw new SessionNotCreatedException("Incorrect selenium grid URL!", e);
         }
     }
 
     private MutableCapabilities getCapability(String browser) {
-        MutableCapabilities capabilities;
-        DriverManagerType driverManagerType = DriverManagerType.valueOf(browser.toUpperCase());
+        DriverType driverType;
 
-        switch (driverManagerType) {
-            case CHROME -> capabilities = new ChromeOptions();
-            case FIREFOX -> capabilities = new FirefoxOptions();
-            case EDGE -> capabilities = new EdgeOptions();
-            case IEXPLORER -> capabilities = new InternetExplorerOptions();
-            default -> throw new IllegalStateException(String.format("%s has no capabilities implemented!", browser.toUpperCase()));
+        try {
+            driverType = DriverType.valueOf(browser.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(String.format("Unknown %s browser", browser.toUpperCase()));
         }
 
-        return capabilities;
+        return switch (driverType) {
+            case CHROME -> new ChromeOptions();
+            case FIREFOX -> new FirefoxOptions();
+            case EDGE -> new EdgeOptions();
+            case IEXPLORER -> new InternetExplorerOptions();
+            case SAFARI -> new SafariOptions();
+        };
     }
 }

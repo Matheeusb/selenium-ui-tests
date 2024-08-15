@@ -16,8 +16,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <maven.target.release>17</maven.target.release>
         <maven.surefire.version>3.2.5</maven.surefire.version>
-        <selenium.java.version>4.23.0</selenium.java.version>
-        <webdrivermanager.version>5.9.2</webdrivermanager.version>
+        <selenium.java.version>4.23.1</selenium.java.version>
         <testng.version>7.10.2</testng.version>
         <lombok.version>1.18.34</lombok.version>
         <extentreports.version>5.1.2</extentreports.version>
@@ -31,14 +30,6 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.java.version}</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-        </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>

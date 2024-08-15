@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 @Listeners(ExtentITestListenerClassAdapter.class)
 public class TestRule {
 
-    protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+    private static final ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 
     public WebDriver getDriver() {
         return driver.get();
